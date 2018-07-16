@@ -1,0 +1,34 @@
+<%= tag.style({type: 'text/css'}) do %>
+  @font-face {
+    font-family: "<%= @language.name.delete(' ') %>";
+    src: url("<%= font_path(@language.source_file) %>") format("<%= @language.file_format %>");
+  }
+  .<%= @language.selector %> {
+    font-size: <%= @language.font_size %>px;
+    font-family: "<%= @language.name.delete(' ') %>";
+  }
+<% end %>
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.h1 @language.name.titleize %>
+<% end %>
+<%= tag.hr %>
+<%= tag.p @language.description %>
+<%= tag.hr %>
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.table({class: 'table table-hover table-striped table-sm'}) do %>
+    <%= tag.thead({class: 'thead thead-dark'})do %>
+      <%= tag.tr do %>
+        <%= tag.th 'Letter in English' %>
+        <%= tag.th "Letter in #{@language.name}" %>
+      <% end %>
+    <% end %>
+    <%= tag.tbody do %>
+      <% ('A'..'Z').each do |letter| %>
+        <%= tag.tr do %>
+          <%= tag.td letter, {style: 'vertical-align: middle;'} %>
+          <%= tag.td letter, {class: @language.selector} %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.h1 'Languages' %>
+<% end %>
+<%= tag.ul do %>
+  <% @languages.each do |language| %>
+    <%= tag.li do %>
+      <%= link_to language.name, language_path(language.id) %>
+    <% end %>
+  <% end %>
+<% end %>
