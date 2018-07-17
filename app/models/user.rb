@@ -9,6 +9,9 @@ class User < ApplicationRecord
   validates :full_name, presence: true
   validates :username, :email, presence: true, uniqueness: true
   has_many :alignments
+  has_many :languages
+  has_many :skills
+  has_many :tools
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
