@@ -6,6 +6,7 @@ class Domain < ApplicationRecord
   validates :description, presence: true
   belongs_to :user
   has_many :deity_domains
+  has_many :deities, through: :deity_domains
 
   def public?
     is_public

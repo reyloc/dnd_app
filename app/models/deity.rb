@@ -9,7 +9,8 @@ class Deity < ApplicationRecord
   belongs_to :realm
   belongs_to :image, optional: true
   belongs_to :user
-  has_many :deity_domains
+  has_one :deity_domain
+  has_one :domain, through: :deity_domain
 
   def public?
     is_public
