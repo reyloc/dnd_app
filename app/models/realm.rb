@@ -4,6 +4,7 @@
 class Realm < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   belongs_to :user
+  has_many :deities
 
   def public?
     is_public

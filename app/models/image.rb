@@ -6,4 +6,5 @@ class Image < ApplicationRecord
   validates :author, presence: true
   validates :title, presence: true
   has_many :tools
+  has_many :deities
 end
