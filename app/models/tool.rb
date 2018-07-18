@@ -2,8 +2,9 @@
 
 # tool model
 class Tool < ApplicationRecord
-  belongs_to :user
   validates :name, presence: true, uniqueness: true
+  belongs_to :image
+  belongs_to :user
 
   def public?
     is_public

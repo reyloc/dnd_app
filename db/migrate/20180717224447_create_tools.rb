@@ -6,7 +6,7 @@ class CreateTools < ActiveRecord::Migration[5.2]
       t.string :type, null: false, default: ''
       t.integer :weight
       t.integer :cost
-      t.string :image
+      t.references :image
       t.boolean :is_public, default: false
       t.references :user
       t.timestamps
