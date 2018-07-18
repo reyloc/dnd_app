@@ -7,7 +7,7 @@ class Deity < ApplicationRecord
   validates :of, presence: true
   belongs_to :alignment
   belongs_to :realm
-  belongs_to :image
+  belongs_to :image, optional: true
   belongs_to :user
 
   def public?
