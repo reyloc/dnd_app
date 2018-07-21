@@ -7,6 +7,8 @@ class Race < ApplicationRecord
   belongs_to :size
   belongs_to :image, optional: true
   belongs_to :user
+  has_many :race_abilities
+  has_many :race_languages
 
   def public?
     is_public
