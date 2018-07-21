@@ -1,0 +1,42 @@
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.h1 @race.name %>
+<% end %>
+<%= tag.hr %>
+<% unless @race.image_id.nil? %>
+pic
+  <%= tag.hr %>
+<% end %>
+<%= tag.div @race.description, {class: 'race-description'} %>
+<%= tag.hr %>
+<%= tag.div({class: 'racial-traits'}) do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.u do %>
+      <%= tag.h2 'Racial Traits' %>
+    <% end %>
+  <% end %>
+  <%= tag.br %>
+  <% @race.racial_traits.each do |rt| %>
+    <%= tag.div({class: 'text-center'}) do %>
+      <%= tag.h4 rt.name %>
+    <% end %>
+    <% rt.racial_trait_descriptions.each do |rtd| %>
+      <%= tag.p rtd.description %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div({class: 'traits'}) do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.u do %>
+      <%= tag.h2 'Traits' %>
+    <% end %>
+  <% end %>
+  <% @race.traits.each do |trait| %>
+    <%= tag.b trait.name %> <%= trait.trait_descriptions.first.description %>
+    <% unless trait.table_id.nil? %>
+      <%= make_table trait.table %>
+    <% end %>
+    <%= tag.br %>
+  <% end %>
+<% end %>
+<%= tag.hr %>

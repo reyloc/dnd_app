@@ -10,6 +10,7 @@ class Race < ApplicationRecord
   has_many :race_abilities
   has_many :race_languages
   has_many :traits
+  has_many :racial_traits
 
   def public?
     is_public

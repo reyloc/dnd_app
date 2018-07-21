@@ -20,28 +20,30 @@ module ApplicationHelper
   end
 
   def get_head(table)
-    tr = ''
-    table.headers.to_hash['headers'].each_with_index do |arr, ind|
-      tr += get_head_tr(table, arr, ind)
+    tag.thead({class: 'thead-dark'}) do
+      tr = ''
+      table.head.to_hash['headers'].each_with_index do |arr, ind|
+        tr += get_head_tr(table, arr, ind)
+      end
+      raw tr
     end
-    raw tr
   end
 
   def get_head_tr(table, arr, ind)
     tag.tr do
       th = ''
       arr.each_with_index do |h, i|
-        th += tag.th h, colspan: table.headers.to_hash['spacing'][ind][i],
+        th += tag.th h, colspan: table.head.to_hash['spacing'][ind][i],
                         class: 'text-center'
       end
+      raw th
     end
-    raw th
   end
 
   def get_body(table)
     tag.tbody do
       tr = ''
-      table.rows.to_hash['rows'].each_with_index do |arr, ind|
+      table.body.to_hash['rows'].each_with_index do |arr, ind|
         tr += get_body_tr(table, arr, ind)
       end
       raw tr
@@ -52,11 +54,11 @@ module ApplicationHelper
     tag.tr do
       td = ''
       arr.each_with_index do |h, i|
-        td += tag.td h, colspan: table.rows.to_hash['spacing'][ind][i],
+        td += tag.td h, colspan: table.body.to_hash['spacing'].first[i],
                         class: 'text-center'
       end
+      raw td
     end
-    raw td
   end
 
   def humanize_float(num)

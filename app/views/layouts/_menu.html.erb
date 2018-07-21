@@ -10,10 +10,10 @@
   <%= tag.div({class: 'collapse navbar-collapse', id: 'navbarSupportedContent'}) do %>
     <%= tag.ul({class: 'navbar-nav mr-auto'}) do %>
       <%= tag.li({class: 'nav-item dropdown'}) do %>
-        <%= link_to 'Stuff', '#', {class: 'nav-link dropdown-toggle', id: 'navbarDropdown', role: 'button', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'}} %>
+        <%= link_to 'Compendium', '#', {class: 'nav-link dropdown-toggle', id: 'navbarDropdown', role: 'button', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'}} %>
         <%= tag.div({class: 'dropdown-menu', aria: {labelledby: 'navbarDropdown'}}) do %>
-          <%= link_to 'Link', '#', {class: 'dropdown-item'} %>
-          <%= link_to 'Link', '#', {class: 'dropdown-item'} %>
+          <%= link_to 'Languages', languages_path, {class: 'dropdown-item'} %>
+          <%= link_to 'Races', races_path, {class: 'dropdown-item'} %>
         <% end %>
       <% end %>
       <%= tag.li({class: 'nav-item'}) do %>

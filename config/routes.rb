@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :languages
+  resources :races
   post 'update_picture/update'
   get 'home/index'
   root 'home#index'

@@ -1,0 +1,10 @@
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.h1 'Races' %>
+<% end %>
+<%= tag.ul do %>
+  <% @races.each do |race| %>
+    <%= tag.li do %>
+      <%= link_to race.name, race_path(race.id) %>
+    <% end %>
+  <% end %>
+<% end %>
