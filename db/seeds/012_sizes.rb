@@ -1,0 +1,65 @@
+Size.create([
+  {:name => "Fine",
+   :min_height => 1,
+   :max_height => 6,
+   :space => 6,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Diminutive",
+   :min_height => 6,
+   :max_height => 12,
+   :space => 12,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Tiny",
+   :min_height => 12,
+   :max_height => 24,
+   :space => 30,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Small",
+   :min_height => 24,
+   :max_height => 48,
+   :space => 60,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Medium",
+   :min_height => 48,
+   :max_height => 96,
+   :space => 60,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Large",
+   :min_height => 96,
+   :max_height => 192,
+   :space => 120,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Huge",
+   :min_height => 192,
+   :max_height => 384,
+   :space => 180,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Gargantuan",
+   :min_height => 384,
+   :max_height => 768,
+   :space => 240,
+   :is_public => true,
+   :user_id => 1
+  },
+  {:name => "Colossal",
+   :min_height => 768,
+   :max_height => 999,
+   :space => 360,
+   :is_public => true,
+   :user_id => 1
+  }
+])

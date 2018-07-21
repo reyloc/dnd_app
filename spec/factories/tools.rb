@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :tool do
     name 'Test Tool'
     description 'Description for Test Tool'
-    type 'Test Type'
+    subtype 'Test Type'
     is_public false
     user_id User.first.id
   end
