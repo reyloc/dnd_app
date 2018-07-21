@@ -6,6 +6,7 @@ class Trait < ApplicationRecord
   belongs_to :race
   belongs_to :table, optional: true
   belongs_to :user
+  has_many :trait_descriptions
 
   def public?
     is_public
