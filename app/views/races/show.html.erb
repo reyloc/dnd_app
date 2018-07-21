@@ -3,7 +3,9 @@
 <% end %>
 <%= tag.hr %>
 <% unless @race.image_id.nil? %>
-pic
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= image_tag @race.image.file, {class: 'img-fluid img-rounded', alt: @race.image.title, title: "By #{@race.image.author}", style: 'margin-bottom: 25px;'} %>
+  <% end %>
   <%= tag.hr %>
 <% end %>
 <%= tag.div @race.description, {class: 'race-description'} %>
@@ -31,12 +33,73 @@ pic
       <%= tag.h2 'Traits' %>
     <% end %>
   <% end %>
-  <% @race.traits.each do |trait| %>
-    <%= tag.b trait.name %> <%= trait.trait_descriptions.first.description %>
-    <% unless trait.table_id.nil? %>
-      <%= make_table trait.table %>
+  <%= tag.p do %>
+    <%= tag.b 'Ability Modifiers' %>
+    <%= tag.ul do %>
+      <% @race.race_abilities.each do |ra| %>
+        <%= tag.li do %>
+          <%= raw (ra.modifier > 0 ? '&plus;' : '') %><%= ra.modifier %>
+          to <%= ra.ability.name %>
+        <% end %>
+      <% end %>
+      <% unless @race.ability_score_points.zero? %>
+        You get <%= @race.ability_score_points %> free
+        <%= @race.ability_score_points > 1 ? 'points' : 'point' %>.
+      <% end %>
     <% end %>
-    <%= tag.br %>
+  <% end %>
+  <%= tag.p do %>
+    <%= tag.b 'Age' %> <%= @race.age %>
+  <% end %>
+  <%= tag.p do %>
+    <%= tag.b 'Alignment' %> <%= @race.alignment %>
+  <% end %>
+  <%= tag.p do %>
+    <%= tag.b 'Height/Weight' %>
+    <%= tag.ul do %>
+      <%= tag.li do %>
+        Height &equals; <%= @race.base_height %> &plus; <%= @race.height_mod %>
+      <% end %>
+      <%= tag.li do %>
+        Weight &equals; <%= @race.base_weight %> &plus; <%= @race.weight_mod %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= tag.p do %>
+    <%= tag.b 'Languages' %>
+    <%= tag.ul do %>
+      <% @race.languages.each do |language| %>
+        <%= tag.li do %>
+          <%= link_to language.name, language_path(language.id) %>
+        <% end %>
+      <% end %>
+      <% unless @race.language_variants.zero? %>
+        <%= tag.li do %>
+          You get <%= @race.language_variants %>
+          <%= @race.language_variants > 1 ? 'languages' : 'language' %>
+          of your choice.
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= tag.p do %>
+    <%= tag.b 'Size' %>
+    <%= @race.size_info %>
+    Your size is <%= @race.size.name %>.
+  <% end %>
+  <%= tag.p do %>
+    <%= tag.b 'Speed' %>
+    <%= @race.speed_info %>
+    Your base speed is <%= @race.speed %>.
+  <% end %>
+  <% @race.traits.each do |trait| %>
+    <%= tag.p do %>
+      <%= tag.b trait.name %>
+      <%= trait.trait_descriptions.first.description %>
+      <% unless trait.table_id.nil? %>
+        <%= make_table trait.table %>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>
 <%= tag.hr %>
