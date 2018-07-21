@@ -14,7 +14,8 @@ Race.create([
    :height_mod => "2d8",
    :weight_mod => "2d6",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Drow",
    :description => "Elves are a magical people of otherworldly grace, living in the w orld but not entirely part of it. Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.",
@@ -31,7 +32,8 @@ Race.create([
    :height_mod => "2d6",
    :weight_mod => "1d6",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Forest Gnome",
    :description => "Gnomes take delight in life, enjoying every moment of invention, exploration, investigation, creation, and play.",
@@ -48,7 +50,8 @@ Race.create([
    :height_mod => "2d4",
    :weight_mod => "1",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Half-Elf",
    :description => "To humans, half-elves look like elves, and to elves, they look human. In height, they’re on par with both parents, though they’re neither as slender as elves nor as broad as humans.",
@@ -65,7 +68,8 @@ Race.create([
    :height_mod => "2d8",
    :weight_mod => "2d4",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Halfling Lightfoot",
    :description => "Halflings are an affable and cheerful people. They cherish the bonds of family and friendship as well as the comforts of hearth and home, harboring few dreams of gold or glory.",
@@ -82,7 +86,8 @@ Race.create([
    :height_mod => "2d4",
    :weight_mod => "1",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Halfling Stout",
    :description => "Halflings are an affable and cheerful people. They cherish the bonds of family and friendship as well as the comforts of hearth and home, harboring few dreams of gold or glory.",
@@ -99,7 +104,8 @@ Race.create([
    :height_mod => "2d4",
    :weight_mod => "1",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Half-Orc",
    :description => "Orc and human tribes sometimes form alliances, joining forces into a larger horde to the terror of civilized lands nearby. When these alliances are sealed by marriages, half-orcs are born.",
@@ -116,7 +122,8 @@ Race.create([
    :height_mod => "2d10",
    :weight_mod => "2d6",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "High Elf",
    :description => "Elves are a magical people of otherworldly grace, living in the w orld but not entirely part of it. Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.",
@@ -133,7 +140,8 @@ Race.create([
    :height_mod => "2d10",
    :weight_mod => "1d4",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Hill Dwarf",
    :description => "Dwarves are solid and enduring like the mountains they love, weathering the passage of centuries with stoic endurance and little change.",
@@ -150,7 +158,8 @@ Race.create([
    :height_mod => "2d4",
    :weight_mod => "2d6",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Human",
    :description => "Humans are the most adaptable and ambitious people among the common races. They have widely varying tastes, morals, and customs in the many different lands where they have settled.",
@@ -167,7 +176,8 @@ Race.create([
    :height_mod => "2d10",
    :weight_mod => "2d4",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Mountain Dwarf",
    :description => "Dwarves are solid and enduring like the mountains they love, weathering the passage of centuries with stoic endurance and little change.",
@@ -184,7 +194,8 @@ Race.create([
    :height_mod => "2d4",
    :weight_mod => "2d6",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Rock Gnome",
    :description => "Gnomes take delight in life, enjoying every moment of invention, exploration, investigation, creation, and play.",
@@ -201,7 +212,8 @@ Race.create([
    :height_mod => "2d4",
    :weight_mod => "1",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Tiefling",
    :description => "Tieflings are derived from human bloodlines, and in the broadest possible sense, they still look human. However, their infernal heritage has left a clear imprint on their appearance.",
@@ -218,7 +230,8 @@ Race.create([
    :height_mod => "2d8",
    :weight_mod => "2d4",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   },
   {:name => "Wood Elf",
    :description => "Elves are a magical people of otherworldly grace, living in the w orld but not entirely part of it. Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.",
@@ -235,6 +248,7 @@ Race.create([
    :height_mod => "2d10",
    :weight_mod => "1d4",
    :image_id => "",
-   :is_public => true
+   :is_public => true,
+   :user_id => 1
   }
 ])

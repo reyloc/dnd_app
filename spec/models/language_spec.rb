@@ -14,6 +14,9 @@ RSpec.describe Language, type: :model do
   it 'user_id should be that of a DM' do
     expect(language.user.dm?).to be true
   end
+  it 'public should be false' do
+    expect(language.public?).to be false
+  end
   it 'source_file should exist' do
     path = File.join(Rails.root, 'app', 'assets', 'fonts', language.source_file)
     expect(File.file?(path)).to be true
