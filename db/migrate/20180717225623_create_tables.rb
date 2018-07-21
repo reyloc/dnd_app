@@ -4,7 +4,6 @@ class CreateTables < ActiveRecord::Migration[5.2]
       t.string :caption
       t.json :head
       t.json :body
-
       t.timestamps
     end
   end
