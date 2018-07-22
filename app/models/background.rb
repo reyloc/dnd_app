@@ -11,6 +11,7 @@ class Background < ApplicationRecord
   has_many :personality_traits
   has_many :ideals
   has_many :bonds
+  has_many :flaws
 
   def public?
     is_public
