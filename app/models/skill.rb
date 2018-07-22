@@ -2,10 +2,11 @@
 
 # skill model
 class Skill < ApplicationRecord
-  belongs_to :ability
-  belongs_to :user
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
+  belongs_to :ability
+  belongs_to :user
+  has_many :background_skill_proficiencies
 
   def public?
     is_public

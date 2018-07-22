@@ -12,6 +12,8 @@ class Background < ApplicationRecord
   has_many :ideals
   has_many :bonds
   has_many :flaws
+  has_many :background_skill_proficiencies
+  has_many :skills, through: :background_skill_proficiencies
 
   def public?
     is_public
