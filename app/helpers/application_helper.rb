@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def get_head(table)
-    tag.thead({class: 'thead-dark'}) do
+    tag.thead(class: 'thead-dark') do
       tr = ''
       table.head.to_hash['headers'].each_with_index do |arr, ind|
         tr += get_head_tr(table, arr, ind)
@@ -43,14 +43,14 @@ module ApplicationHelper
   def get_body(table)
     tag.tbody do
       tr = ''
-      table.body.to_hash['rows'].each_with_index do |arr, ind|
-        tr += get_body_tr(table, arr, ind)
+      table.body.to_hash['rows'].each do |arr|
+        tr += get_body_tr(table, arr)
       end
       raw tr
     end
   end
 
-  def get_body_tr(table, arr, ind)
+  def get_body_tr(table, arr)
     tag.tr do
       td = ''
       arr.each_with_index do |h, i|

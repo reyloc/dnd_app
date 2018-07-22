@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# race controller
 class RacesController < ApplicationController
   before_action :set_race, only: %w[show edit update destroy]
 
@@ -29,4 +32,3 @@ class RacesController < ApplicationController
     params.fetch(:race, {})
   end
 end
-
