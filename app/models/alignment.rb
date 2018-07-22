@@ -6,4 +6,5 @@ class Alignment < ApplicationRecord
   validates :description, presence: true
   belongs_to :user
   has_many :deities
+  has_many :ideal_alignments
 end

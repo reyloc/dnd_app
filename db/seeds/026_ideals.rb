@@ -1,4 +1,4 @@
-deal.create([
+Ideal.create([
   {:name => "Tradition",
    :description => "The ancient traditions of worship and sacrifice must be preserved and upheld.",
    :background_id => 1
