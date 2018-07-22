@@ -7,6 +7,7 @@ class Background < ApplicationRecord
   belongs_to :feature
   belongs_to :image, optional: true
   belongs_to :user
+  has_many :background_descriptions
 
   def public?
     is_public
