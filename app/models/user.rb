@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :tools
   has_many :deities
   has_many :domains
+  has_many :features
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
