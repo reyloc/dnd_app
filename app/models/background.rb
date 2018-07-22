@@ -9,6 +9,8 @@ class Background < ApplicationRecord
   belongs_to :user
   has_many :background_descriptions
   has_many :personality_traits
+  has_many :ideals
+  has_many :bonds
 
   def public?
     is_public
