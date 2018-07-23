@@ -15,7 +15,6 @@ class Background < ApplicationRecord
   has_many :background_skill_proficiencies
   has_many :skills, through: :background_skill_proficiencies
   has_many :background_tool_proficiencies
-  has_many :tools, through: :background_tool_proficiencies
   has_many :background_languages
   has_many :languages, through: :background_languages
   has_many :background_characteristics

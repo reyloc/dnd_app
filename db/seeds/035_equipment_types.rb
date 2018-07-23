@@ -4,7 +4,7 @@ EquipmentType.create([
   },
   {:name => 'Ammunition',
    :description => "Any material fired, scattered, dropped, or detonated from any weapon."
-  }
+  },
   {:name => "Armor",
    :description => "D&D worlds are a vast tapestry made up of many different cultures, each with its own technology level. For this reason, adventurers have access to a variety of armor types, ranging from leather armor to chain mail to costly plate armor, with several other kinds of armor in between."
   },
