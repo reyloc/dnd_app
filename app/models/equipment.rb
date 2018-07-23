@@ -6,4 +6,5 @@ class Equipment < ApplicationRecord
   belongs_to :equipment_type
   belongs_to :image, optional: true
   belongs_to :user
+  has_many :equipment_descriptions
 end
