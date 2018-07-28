@@ -3,5 +3,5 @@
 # background tool proficiency model
 class BackgroundToolProficiency < ApplicationRecord
   belongs_to :background
-  belongs_to :tool
+  belongs_to :equipment
 end
