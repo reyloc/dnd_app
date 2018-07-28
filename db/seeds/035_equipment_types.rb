@@ -26,7 +26,10 @@ EquipmentType.create([
   {:name => "Wealth",
    :description => "Wealth appears in many forms in a D&D world. Coins, gemstones, trade goods, art objects, animals, and property can reflect your character's financial well-being. Members of the peasantry trade in goods, bartering for what they need and paying taxes in grain and cheese. Members of the nobility trade either in legal rights, such as the rights to a mine, a port, or farmland, or in gold bars, measuring gold by the pound rather than by the coin. Only merchants, adventurers, and those offering professional services for hire commonly deal in coins."
   },
-  {:name => "Weapon",
-   :description => "Your class grants proficiency in certain weapons, reflecting both the class's focus and the loots you are most likely lo use. Whether you favor a longsword or a longbow, your weapon and your ability to wield it effectively can mean the difference between life and death while adventuring."
+  {:name => "Melee Weapon",
+   :description => "Your class grants proficiency in certain weapons, reflecting both the class's focus and the loots you are most likely lo use. Whether you favor a longsword or a longbow, your weapon and your ability to wield it effectively can mean the difference between life and death while adventuring. A melee weapon is used to attack a target within 5 feel of you,"
+  },
+  {:name => "Ranged Weapon",
+   :description => "our class grants proficiency in certain weapons, reflecting both the class's focus and the loots you are most likely lo use. Whether you favor a longsword or a longbow, your weapon and your ability to wield it effectively can mean the difference between life and death while adventuring. A ranged weapon is used to attack a target at a distance."
   }
 ])
