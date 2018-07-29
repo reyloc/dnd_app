@@ -18,6 +18,7 @@ class Background < ApplicationRecord
   has_many :background_languages
   has_many :languages, through: :background_languages
   has_many :background_characteristics
+  has_many :background_equipments
 
   def public?
     is_public

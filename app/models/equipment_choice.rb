@@ -2,5 +2,5 @@
 
 # equipment choice
 class EquipmentChoice < ApplicationRecord
-  # has_many :choice_parts
+  has_many :choice_parts
 end
