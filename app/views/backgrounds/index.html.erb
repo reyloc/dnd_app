@@ -1,0 +1,75 @@
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.h1 controller.controller_name.titleize %>
+<% end %>
+<%= tag.div do %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Every story has a beginning. Your character's background reveals where you came from, how you became an adventurer, and your place in the world. Your fighter might have been a courageous knight or a grizzled soldier. Your wizard could have been a sage or an artisan. Your rogue might have gotten by as a guild thief or commanded audiences as a jester.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Choosing a background provides you with important story cues about your character's identity. The most important question to ask about your background is what changed? Why did you stop doing whatever your background describes and start adventuring? Where did you get the money to purchase your starting gear, or, if you come from a wealthy background, why don't you have more money? How did you learn the skills of your c1ass? What sets you apart from ordinary people who share your background?
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Proficiencies' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Each background gives a character proficiency in two skills.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    In addition, most backgrounds give a character proficiency with one or more tools.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    If a character would gain the same proficiency from two different sources, he or she can choose a different proficiency of the same kind (skill or tool) instead.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Languages' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Some backgrounds also allow characters to learn additional languages beyond those given by race.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Equipment' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Each background provides a package of starting equipment. If you use the optional rule  to spend coin on gear, you do not receive the starting equipment from your background.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Suggested Characteristics' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    A background contains suggested personal characteristics based on your background. You can pick characteristics, roll dice to determine them randomly, or use the suggestions as inspiration for characteristics of your own creation.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Customizing a Background' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    You might want to tweak some of the features of a background so it better tits your character or the campaign setting. To customize a background, you can replace one feature with any other one, choose any two skills, and choose a total of two tool proficiencies or languages from the sample backgrounds. You can either use the equipment package from your background or spend coin on gear (if you spend coin, you can't also take the equipment package suggested for your class). Finally, choose two personality traits, one ideal, one bond, and one flaw. If you can't find a feature that matches your desired background, work with your DM to create one.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'List of  Backgrounds' %>
+  <% end %>
+  <%= tag.ul do %>
+    <% @backgrounds.each do |background| %>
+      <%= tag.li do %>
+        <%= link_to background.name, background_path(background.id) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

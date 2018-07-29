@@ -2,8 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :languages
-  resources :races
+  resources :backgrounds, only: %w[index show]
+  resources :languages, only: %w[index show]
+  resources :races, only: %w[index show]
   post 'update_picture/update'
   get 'home/index'
   root 'home#index'

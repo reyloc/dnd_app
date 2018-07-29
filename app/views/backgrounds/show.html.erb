@@ -1,0 +1,169 @@
+<%= tag.div({class: 'text-center'}) do %>
+  <%= tag.h1 @background.name.titleize %>
+<% end %>
+<%= tag.hr %>
+<% unless @background.image_id.nil? %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= image_tag @background.image.file, {class: 'img-fluid img-rounded', alt: @background.image.title, title: "By #{@background.image.author}", style: 'margin-bottom: 25px;'} %>
+  <% end %>
+  <%= tag.hr %>
+<% end %>
+<%= tag.div({class: 'background_descriptions'}) do %>
+  <% @background.background_descriptions.each do |bd| %>
+  <%= tag.p bd.description, style: 'text-indent: 30px;' %>
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<% unless @background.background_skill_proficiencies.count.zero? %>
+  <%= tag.b 'Skill Proficiencies:' %>
+  <%= tag.ul do %>
+    <% @background.background_skill_proficiencies.each do |bsp| %>
+      <%= tag.li bsp.skill.name %>
+    <% end %>
+  <% end %>
+<% end %>
+<% unless @background.background_tool_proficiencies.count.zero? %>
+  <%= tag.b 'Tool Proficiencies:' %>
+  <%= tag.ul do %>
+    <% @background.background_tool_proficiencies.each do |btp| %>
+      <%= tag.li do %>
+        <%= btp.equipment.name %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<% unless @background.background_languages.count.zero? && @background.language_variants.zero? %>
+  <%=tag.b 'Languages:' %>
+  <%= tag.ul do %>
+    <% @background.languages.each do |bl| %>
+      <%= tag.li do %>
+        <%= link_to bl.language.name, language_path(bl.language.id) %>
+      <% end %>
+    <% end %>
+    <% unless @background.language_variants.zero? %>
+      <%= tag.li do %>
+        You get <%= @background.language_variants %> <%= link_to 'language(s)', languages_path %> of your own choosing.
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= tag.b 'Equipment:' %>
+<%= tag.ul do %>
+  <% @background.background_equipments.each do |be| %>
+    <%= tag.li do %>
+      <% choices = be.equipment_choice.choice_parts.count-1 %>
+      <% be.equipment_choice.choice_parts.each_with_index do |choice, i| %>
+        <%= choice.quantity unless choice.quantity == 1 %> <%= choice.equipment.name %>
+        <% unless choices == i %>or<% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div({class: 'background-feature'}) do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 "Background Feature: #{@background.feature.name}" %>
+   <% end %>
+  <% @background.feature.feature_descriptions.each do |fd| %>
+    <%= tag.p fd.description, style: 'text-indent: 30px;' %>
+  <% end %>
+  <% unless @background.feature.table_id.nil? %>
+    <%= make_table @background.feature.table %>
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<% @background.background_characteristics.each do |bc| %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 bc.name %>
+  <% end %>
+  <% bc.background_characteristic_descriptions.each do |bcd| %>
+    <%= tag.p bcd.description, style: 'text-indent: 30px;' %>
+  <% end %>
+  <% unless bc.table_id.nil? %>
+    <%= make_table bc.table %>
+  <% end %>
+  <%= tag.hr %>
+<% end %>
+<%= tag.div({class: 'background-suggested-characteristics'}) do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Suggested Characteristics' %>
+  <% end %>
+  <%= tag.p @background.suggested_characteristics, style: 'text-index: 30px;' %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div({class: 'background-personality-traits'}) do %>
+  <%= tag.table({class: 'table table-hover table-striped'}) do %>
+    <%= tag.thead({class: 'thead-dark'}) do %>
+      <%= tag.tr do %>
+        <%= tag.th "d#{@background.personality_traits.count}" %>
+        <%= tag.th 'Personality Trait', class: 'text-center' %>
+      <% end %>
+    <% end %>
+    <%= tag.tbody do %>
+      <% @background.personality_traits.each_with_index do |pt, i| %>
+        <%= tag.tr do %>
+          <%= tag.td i+1, align: 'center' %>
+          <%= tag.td pt.description %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= tag.div({class: 'background-ideals'}) do %>
+  <%= tag.table({class: 'table table-hover table-striped'}) do %>
+    <%= tag.thead({class: 'thead-dark'}) do %>
+      <%= tag.tr do %>
+        <%= tag.th "d#{@background.ideals.count}" %>
+        <%= tag.th 'Ideals', class: 'text-center' %>
+      <% end %>
+    <% end %>
+    <%= tag.tbody do %>
+      <% @background.ideals.each_with_index do |ideal, i| %>
+        <%= tag.tr do %>
+          <%= tag.td i+1, align: 'center' %>
+          <%= tag.td do %>
+            <%= tag.b ideal.name %>
+            <%= ideal.description %>
+            (<%= ideal.alignments.pluck(:name).join(', ') %>)
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= tag.div({class: 'background-bonds'}) do %>
+  <%= tag.table({class: 'table table-hover table-striped'}) do %>
+    <%= tag.thead({class: 'thead-dark'}) do %>
+      <%= tag.tr do %>
+        <%= tag.th "d#{@background.bonds.count}" %>
+        <%= tag.th 'Bond', class: 'text-center' %>
+      <% end %>
+    <% end %>
+    <%= tag.tbody do %>
+      <% @background.bonds.each_with_index do |b, i| %>
+        <%= tag.tr do %>
+          <%= tag.td i+1, align: 'center' %>
+          <%= tag.td b.description %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= tag.div({class: 'background-flaws'}) do %>
+  <%= tag.table({class: 'table table-hover table-striped'}) do %>
+    <%= tag.thead({class: 'thead-dark'}) do %>
+      <%= tag.tr do %>
+        <%= tag.th "d#{@background.flaws.count}" %>
+        <%= tag.th 'Flaw', class: 'text-center' %>
+      <% end %>
+    <% end %>
+    <%= tag.tbody do %>
+      <% @background.flaws.each_with_index do |f, i| %>
+        <%= tag.tr do %>
+          <%= tag.td i+1, align: 'center' %>
+          <%= tag.td f.description %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -7,4 +7,5 @@ class Ideal < ApplicationRecord
   belongs_to :background
   has_many :ideal_alignments
   has_many :alignments, through: :ideal_alignments
+
 end
