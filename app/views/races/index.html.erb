@@ -1,10 +1,93 @@
 <%= tag.div({class: 'text-center'}) do %>
   <%= tag.h1 'Races' %>
 <% end %>
-<%= tag.ul do %>
-  <% @races.each do |race| %>
-    <%= tag.li do %>
-      <%= link_to race.name, race_path(race.id) %>
+<%= tag.div do %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    A visit to one of the great cities in the worlds of Dungeons and Dragons - Waterdeep, the Free City of Greyhawk, or even uncanny Sigil, the City of Doors - overwhelms the senses. Voices chatter in countless different languages. The smells of cooking in dozens of different cuisines mingle with the odors of crowded streets and poor sanitation. Buildings in myriad architectural styles display the diverse origins of their inhabitants. And the people themselves - people of varying size, shape, and color, dressed in a dazzling spectrum of styles and hues - represent many different races, from diminutive halflings and stout dwarves to majestically beautiful elves, mingling among a variety of human ethnicities.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Scattered among the members of these more common races are the true exotics: a hulking dragonborn here, pushing his way through the crowd, and a sly tiefling there, lurking in the shadows with mischief in her eyes. A group of gnomes laughs as one of them activates a clever wooden toy that moves of its own accord. Half-elves and half-orcs live and work alongside humans, without fully belonging to the races of either of their parents. And there, well out of the sunlight, is a lone drow - a fugitive from the subterranean expanse of the Underdark, trying to make his way in a world that fears his kind.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h2 'Choosing a Race' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Humans are the most common people in the worlds of D&D, but they live and work alongside dwarves, elves, halflings, and countless other fantastic species. Your character belongs lo one of these peoples.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Not every intelligent race of the multiverse is appropriate for a player-controlled adventurer. Dwarves, elves, halflings, and humans are the most common races to produce the sort of adventurers who make up typical parties. Dragonborn, gnomes, half-elves, half-orcs, and tieflings are less common as adventurers. Drow, a subrace of elves, are also uncommon.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Your choice of race affects many different aspects of your character. It establishes fundamental qualities that exist throughout your character's adventuring career. When making this decision, keep in mind the kind of character you want to play. For example, a halfling could be a good choice for a sneaky rogue, a dwarf makes a lough warrior, and an elf can be a master of arcane magic,
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Your character race not only affects your ability scores and traits but also provides the cues for building your character's story. Each race's description includes information to help you role-play a character of that race, including personality, physical appearance, features of society, and racial alignment tendencies. These details are suggestions to help you think about your character; adventurers can deviate widely from the norm for their race. It's worthwhile to consider why your character is different, as a helpful way to think about your character's background and personality.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h3 'Racial Traits' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    The description of each race includes racial traits that are common to members of that race. The following entries appear among the traits of most races.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Ability Score Increase' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Every race increases one or more of a character's ability scores.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Age' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+  The age entry notes the age when a member of the race is considered an adult, as well as the race's expected lifespan. This information can help you decide how old your character is at the start of the game. You can choose any age for your character, which could provide an explanation for some of your ability scores. For example, if you play a young or very old character, your age could explain a particularly low Strength or Constitution score, while advanced age could account for a high Intelligence or Wisdom.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Alignment' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Most races have tendencies toward certain alignments, described in this entry. These are not binding for player characters, but considering why your dwarf is chaotic, for example, in defiance of the lawful dwarf society can help you better define your character.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Size' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Characters of most races are Medium, a size category including creatures roughly 4 to 8 feet tall. Members of a few races are Small (between 2 and 4 feet tall), which means that certain rules of the game affect them differently. The most important of these rules is that Small characters have trouble wielding heavy weapons.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Speed' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Your speed determines how far you can move when traveling and fighting.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Languages' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    By virtue of your race, your character can speak, read, and write certain languages.
+  <% end %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h4 'Subraces' %>
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+  Some races have subraces. Members of a subrace have the traits of the parent race in addition to the traits specified for their subrace. Relationships among subraces vary significantly from race to race and world to world. In the Dragonlance campaign setting, for example, mountain dwarves and hill dwarves live together as different clans of the same people, but in the Forgotten Realms, they live far apart in separate kingdoms and call themselves shield dwarves and gold dwarves, respectively.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.di({class: 'text-center'}) do %>
+    <%= tag.h4 'List of Races' %>
+  <% end %>
+  <%= tag.ul do %>
+    <% @races.each do |race| %>
+      <%= tag.li do %>
+        <%= link_to race.name, race_path(race.id) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
