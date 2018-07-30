@@ -1,10 +1,24 @@
 <%= tag.div({class: 'text-center'}) do %>
   <%= tag.h1 'Languages' %>
 <% end %>
-<%= tag.ul do %>
-  <% @languages.each do |language| %>
-    <%= tag.li do %>
-      <%= link_to language.name, language_path(language.id) %>
+<%= tag.div do %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Your race indicates the languages your character can speak by default, and your background might give you access to one or more additional languages of your choice. Note these languages on your character sheet.
+  <% end %>
+  <%= tag.p({style: 'text-indent: 30px;'}) do %>
+    Some of these languages are actually families of languages with many dialects. For example, the Primordial language includes the Auran, Aquan, Ignan, and Terran dialects, one for each of the four elemental planes. Creatures that speak different dialects of the same language can communicate with one another.
+  <% end %>
+<% end %>
+<%= tag.hr %>
+<%= tag.div do %>
+  <%= tag.div({class: 'text-center'}) do %>
+    <%= tag.h3 'List of Languages' %>
+  <% end %>
+  <%= tag.ul do %>
+    <% @languages.each do |language| %>
+      <%= tag.li do %>
+        <%= link_to language.name, language_path(language.id) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
