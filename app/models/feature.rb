@@ -6,8 +6,4 @@ class Feature < ApplicationRecord
   belongs_to :table, optional: true
   belongs_to :user
   has_many :feature_descriptions
-
-  def public?
-    is_public
-  end
 end

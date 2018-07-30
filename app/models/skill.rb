@@ -7,8 +7,4 @@ class Skill < ApplicationRecord
   belongs_to :ability
   belongs_to :user
   has_many :background_skill_proficiencies
-
-  def public?
-    is_public
-  end
 end

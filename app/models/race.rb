@@ -12,8 +12,4 @@ class Race < ApplicationRecord
   has_many :traits
   has_many :racial_traits
   has_many :languages, through: :race_languages
-
-  def public?
-    is_public
-  end
 end

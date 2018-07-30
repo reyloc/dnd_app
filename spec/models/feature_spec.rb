@@ -9,6 +9,6 @@ RSpec.describe Feature, type: :model do
     expect(feature.user.dm?).to be true
   end
   it 'public should be false' do
-    expect(feature.public?).to be false
+    expect(feature.is_public?).to be false
   end
 end

@@ -7,8 +7,4 @@ class Domain < ApplicationRecord
   belongs_to :user
   has_many :deity_domains
   has_many :deities, through: :deity_domains
-
-  def public?
-    is_public
-  end
 end

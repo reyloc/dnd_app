@@ -11,8 +11,4 @@ class Deity < ApplicationRecord
   belongs_to :user
   has_one :deity_domain
   has_one :domain, through: :deity_domain
-
-  def public?
-    is_public
-  end
 end

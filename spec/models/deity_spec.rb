@@ -12,6 +12,6 @@ RSpec.describe Deity, type: :model do
     expect(deity.user.dm?).to be true
   end
   it 'public should be false' do
-    expect(deity.public?).to be false
+    expect(deity.is_public?).to be false
   end
 end

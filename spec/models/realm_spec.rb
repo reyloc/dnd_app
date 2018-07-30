@@ -10,6 +10,6 @@ RSpec.describe Realm, type: :model do
     expect(realm.user.dm?).to be true
   end
   it 'should not be public' do
-    expect(realm.public?).to be false
+    expect(realm.is_public?).to be false
   end
 end

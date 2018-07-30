@@ -2,5 +2,5 @@
 
 require 'rails_helper'
 
-RSpec.describe BackgroundsHelper, type: :helper do
+RSpec.describe BackgroundHelper, type: :helper do
 end

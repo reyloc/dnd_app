@@ -11,6 +11,6 @@ RSpec.describe Background, type: :model do
     expect(background.user.dm?).to be true
   end
   it 'public should be false' do
-    expect(background.public?).to be false
+    expect(background.is_public?).to be false
   end
 end

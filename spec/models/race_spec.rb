@@ -11,6 +11,6 @@ RSpec.describe Race, type: :model do
     expect(race.user.dm?).to be true
   end
   it 'public should be false' do
-    expect(race.public?).to be false
+    expect(race.is_public?).to be false
   end
 end

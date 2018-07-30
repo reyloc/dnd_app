@@ -7,7 +7,7 @@ RSpec.describe Trait, type: :model do
   it { expect(trait).to validate_presence_of :name }
   it { expect(trait).to validate_uniqueness_of :name }
   it 'public should be false' do
-    expect(trait.public?).to be false
+    expect(trait.is_public?).to be false
   end
   it 'user_id should be that of a DM' do
     expect(trait.user.dm?).to be true

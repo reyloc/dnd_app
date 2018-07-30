@@ -10,7 +10,7 @@ RSpec.describe Size, type: :model do
     expect(size.user.dm?).to be true
   end
   it 'public should be false' do
-    expect(size.public?).to be false
+    expect(size.is_public?).to be false
   end
   it 'min_height should be less than max_height' do
     expect(size.max_height).to be > size.min_height
