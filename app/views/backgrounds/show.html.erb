@@ -51,10 +51,17 @@
 <%= tag.ul do %>
   <% @background.background_equipments.each do |be| %>
     <%= tag.li do %>
-      <% choices = be.equipment_choice.choice_parts.count-1 %>
-      <% be.equipment_choice.choice_parts.each_with_index do |choice, i| %>
-        <%= choice.quantity unless choice.quantity == 1 %> <%= choice.equipment.name %>
-        <% unless choices == i %>or<% end %>
+      <% if be.equipment_choice.choice_parts.size > 1 %>
+        Your choice of: <%= tag.ul do %>
+          <% be.equipment_choice.choice_parts.each do |choice| %>
+            <%= tag.li do %>
+              <%= choice.quantity unless choice.quantity == 1 %> <%= choice.equipment.name.titleize %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= be.equipment_choice.choice_parts.first.quantity unless be.equipment_choice.choice_parts.first.quantity == 1 %>
+        <%= be.equipment_choice.choice_parts.first.equipment.name.titleize %>
       <% end %>
     <% end %>
   <% end %>
