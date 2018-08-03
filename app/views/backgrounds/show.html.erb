@@ -49,6 +49,31 @@
 <% end %>
 <%= tag.b 'Equipment:' %>
 <%= tag.ul do %>
+  <% @background.equipment_choices.each do |ec| %>
+    <%= tag.li do %>
+      <% if ec.choices.size > 1 %>
+        <% unless ec.choices.first.description.empty? %>
+          <%= ec.choices.first.description %>
+        <% end %>
+        You get one of the following:
+        <%= tag.ul do %>
+          <% ec.choices.each do |choice| %>
+            <%= tag.li do %>
+              <% choice.choice_parts.each_with_index do |part, i| %>
+                <%= part.quantity unless part.quantity == 1 %> <%= part.equipment.name %>
+                <% unless choice.choice_parts.size == i+1 %>AND<% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% ec.choices.first.choice_parts.each_with_index do |part, i| %>
+          <%= part.quantity unless part.quantity == 1 %> <%= part.equipment.name %>
+          <% unless ec.choices.first.choice_parts.size == i+1 %>AND<% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
 <%= tag.hr %>
 <%= tag.div({class: 'background-feature'}) do %>
